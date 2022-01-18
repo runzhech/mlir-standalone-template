@@ -22,6 +22,9 @@
 #include "Standalone/StandaloneDialect.h"
 #include "Standalone/StandaloneOpsDialect.cpp.inc"
 
+#include "Ami/AmiDialect.h"
+#include "Ami/AmiOps.cpp.inc"
+
 int main(int argc, char **argv) {
   mlir::registerAllPasses();
   // TODO: Register standalone passes here.
@@ -30,6 +33,7 @@ int main(int argc, char **argv) {
   registry.insert<mlir::standalone::StandaloneDialect>();
   registry.insert<mlir::StandardOpsDialect>();
   registry.insert<mlir::arith::ArithmeticDialect>();
+  registry.insert<mlir::ami::AmiDialect>();
   // Add the following to include *all* MLIR Core dialects, or selectively
   // include what you need like above. You only need to register dialects that
   // will be *parsed* by the tool, not the one generated
