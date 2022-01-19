@@ -3,10 +3,11 @@
 
 
 include "AmiDialect.td"
+include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
-def Ami_ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
+def ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
     let summary = "A constant op";
     let description = [{
         ami.constant takes an integer and returns an same integer.
@@ -18,6 +19,14 @@ def Ami_ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType
     let assemblyFormat = [{
         $input attr-dict `:` type($input)
     }];
+
+    // let printer = [{ return ::print(p, *this);}];
+
+    let builders = [
+        OpBuilder<(ins "int":$value)>
+    ];
+    // let verifier = [{ return ::verify(*this);}];
+
 
 }
 
