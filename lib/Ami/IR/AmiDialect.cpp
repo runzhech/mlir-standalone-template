@@ -1,7 +1,7 @@
 
 
-#include "Ami/AmiDialect.h"
-#include "Ami/AmiOps.h"
+#include "Ami/IR/AmiDialect.h"
+#include "Ami/IR/AmiOps.h"
 
 
 using namespace mlir;
@@ -14,6 +14,6 @@ void AmiDialect::initialize()
 {
     addOperations<
     #define GET_OP_LIST
-    #include "Ami/AmiOps.cpp.inc"
+    #include "Ami/IR/AmiOps.cpp.inc"
     >();
 }

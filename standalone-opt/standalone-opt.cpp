@@ -22,8 +22,8 @@
 #include "Standalone/StandaloneDialect.h"
 #include "Standalone/StandaloneOpsDialect.cpp.inc"
 
-#include "Ami/AmiDialect.h"
-#include "Ami/AmiOpsDialect.cpp.inc"
+#include "Ami/IR/AmiDialect.h"
+#include "Ami/IR/AmiOpsDialect.cpp.inc"
 
 int main(int argc, char **argv) {
   mlir::registerAllPasses();
