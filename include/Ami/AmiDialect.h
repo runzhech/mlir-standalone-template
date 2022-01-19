@@ -5,6 +5,6 @@
 
 #include "mlir/IR/Dialect.h"
 
-#include "Ami/AmiDialect.h.inc"
+#include "Ami/AmiOpsDialect.h.inc"
 
 #endif //AMI_AMIDIALECT_H

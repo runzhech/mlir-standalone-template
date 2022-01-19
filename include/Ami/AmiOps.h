@@ -10,4 +10,4 @@
 #define GET_OP_CLASSES
 #include "Ami/AmiOps.h.inc"
 
-#endif
+#endif // AMI_AMIOPS_H

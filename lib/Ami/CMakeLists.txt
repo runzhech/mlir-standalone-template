@@ -1,4 +1,4 @@
-add_mlir_dialect_library(
+add_mlir_dialect_library(MLIRAmi
     AmiDialect.cpp
     AmiOps.cpp
 
@@ -6,7 +6,7 @@ add_mlir_dialect_library(
     ${PROJECT_SOURCE_DIR}/include/Ami
 
     DEPENDS
-    MLIRAmiIncGen
+    MLIRAmiOpsIncGen
 
     LINK_LIBS PUBLIC
     MLIRIR

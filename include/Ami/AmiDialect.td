@@ -28,4 +28,4 @@ def Ami_Dialect : Dialect
 class Ami_Op<string mnemonic, list<OpTrait> traits = []> :
     Op<Ami_Dialect, mnemonic, traits>;
 
-#endif 
+#endif //AMI_DIALECT

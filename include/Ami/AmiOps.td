@@ -6,7 +6,7 @@ include "AmiDialect.td"
 include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
-def Ami_ConstantOp : Ami_Op<"constant", [NoSideEffect]>{
+def Ami_ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
     let summary = "A constant op";
     let description = [{
         ami.constant takes an integer and returns an same integer.
