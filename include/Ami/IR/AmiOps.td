@@ -20,12 +20,12 @@ def ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
         $input attr-dict `:` type($input)
     }];
 
-    // let printer = [{ return ::print(p, *this);}];
+    let printer = [{ return ::print(p, *this);}];
 
     let builders = [
         OpBuilder<(ins "int":$value)>
     ];
-    // let verifier = [{ return ::verify(*this);}];
+    let verifier = [{ return ::verify(*this);}];
 
 
 }

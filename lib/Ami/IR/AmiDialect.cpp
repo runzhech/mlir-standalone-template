@@ -4,6 +4,10 @@
 #include "Ami/IR/AmiOps.h"
 
 
+#include "mlir/IR/Builders.h"
+#include "mlir/IR/BuiltinTypes.h"
+#include "mlir/IR/OpImplementation.h"
+
 using namespace mlir;
 using namespace mlir::ami;
 
@@ -20,9 +24,7 @@ void AmiDialect::initialize()
 }
 
 
-// static mlir::LogicalResult verify(ConstantOp op)
-// {    
-//     return mlir::success();
-// }
 
 
+// #define GET_OP_CLASSES
+// #include "Ami/IR/AmiOps.cpp.inc"
