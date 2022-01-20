@@ -19,16 +19,25 @@
 #include "llvm/Support/SourceMgr.h"
 #include "llvm/Support/ToolOutputFile.h"
 
+
+
+/* Register Dialect */
 #include "Standalone/StandaloneDialect.h"
 #include "Standalone/StandaloneOpsDialect.cpp.inc"
 
 #include "Ami/IR/AmiDialect.h"
 #include "Ami/IR/AmiOpsDialect.cpp.inc"
 
-int main(int argc, char **argv) {
-  mlir::registerAllPasses();
-  // TODO: Register standalone passes here.
+/* Redister Pass */
+#define GEN_PASS_REGISTRATION
+#include "mlir/Dialect/Affine/Passes.h.inc"
 
+
+
+int main(int argc, char **argv) {
+  // mlir::registerAllPasses();
+  // TODO: Register standalone passes here.
+  mlir::registerAffinePasses();
   mlir::DialectRegistry registry;
   registry.insert<mlir::standalone::StandaloneDialect>();
   registry.insert<mlir::StandardOpsDialect>();

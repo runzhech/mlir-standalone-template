@@ -13,12 +13,13 @@ def ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
         ami.constant takes an integer and returns an same integer.
     }];
 
-    let arguments = (ins I32:$input);
-    let results = (outs I32:$res);
+    let arguments = (ins 
+        I32Tensor:$input
+    );
+    let results = (outs I32Tensor:$output);
 
-    let assemblyFormat = [{
-        $input attr-dict `:` type($input)
-    }];
+
+    let assemblyFormat = "$input attr-dict `:`  type(results) type($input)";
 
     let printer = [{ return ::print(p, *this);}];
 
@@ -29,5 +30,22 @@ def ConstantOp : Ami_Op<"constant", [NoSideEffect, SameOperandsAndResultType]>{
 
 
 }
+
+
+
+def PrintOp : Ami_Op<"print">
+{
+
+    let summary = "Print Operation";
+    let description = [{
+        This operation prints a given input tensor, and produces no result;
+    }];
+
+    let arguments = (ins I32Tensor:$value);
+
+    let assemblyFormat = "$value attr-dict `:` type($value)";
+}
+
+
 
 #endif //AMI_OPS
