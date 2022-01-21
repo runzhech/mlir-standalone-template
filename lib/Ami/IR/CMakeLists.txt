@@ -3,7 +3,7 @@ add_mlir_dialect_library(MLIRAmi
     AmiOps.cpp
 
     ADDITIONAL_HEADER_DIRS
-    ${PROJECT_SOURCE_DIR}/include/Ami
+    ${PROJECT_SOURCE_DIR}/include/Ami/IR
 
     DEPENDS
     MLIRAmiOpsIncGen

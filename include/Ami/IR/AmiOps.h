@@ -1,5 +1,5 @@
-#ifndef AMI_AMIOPS_H
-#define AMI_AMIOPS_H
+#ifndef AMI_IR_AMIOPS_H
+#define AMI_IR_AMIOPS_H
 
 #include "mlir/IR/BuiltinTypes.h"
 #include "mlir/IR/Dialect.h"
@@ -10,4 +10,4 @@
 #define GET_OP_CLASSES
 #include "Ami/IR/AmiOps.h.inc"
 
-#endif // AMI_AMIOPS_H
+#endif // AMI_IR_AMIOPS_H
